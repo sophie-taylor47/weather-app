@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/index.js"
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1> ☀️ Weather App ☀️ </h1>
+                  <form id="search-form">
+                <input
+                  type="text"
+                  placeholder="Please enter a City..."
+                  class="shadow-sm"
+                  id="search-input"/>
+                <button class="searchButton shadow-sm" 
+                id="button-search"
+                type="submit">Search</button>
+                
+                <button
+                class="btn btn-success w-100"
+                id="current-location-button">
+                Current Location
+              </button>
+              </form>
+                 </div>
+
+                <div class="col-6">
+                  <h2 id="city"> London </h2> 
+                  <p id="date" ></p>
+                   <img src="images/sunny.png" alt="Sunny" class="mainSun"/>
+                  <h2> <span id= "temperature"></span>        
+                    <span class="weather-degree"> ºC              
+                    </span> </h2>
+                     <p id="weather-description"></p>
+                </div>   
+                   
+                <div class="col-6 extra-information">
+                  <ul>              
+                    <li><strong>Humidity: </strong><span id="humidity"></span>%</li>
+                      <li><strong>Wind: </strong><span id="wind"></span>km/h</li>
+                  </u>
+                </div>
+</div>
+</div>
+
+          <script src="src/index.js"></script>   
+  </body>
+</html>

@@ -1,0 +1,44 @@
+body {
+  background: linear-gradient(
+    180.3deg,
+    rgb(230, 243, 206) 37.2%,
+    rgb(166, 223, 215) 137.3%
+  );
+  font-family: "Montserrat", sans-serif;
+}
+
+form {
+  margin-top: 10px;
+  left: 30px;
+  top: 10px;
+}
+
+.container {
+  background: rgb(251, 202, 63);
+  background: radial-gradient(
+    circle,
+    rgba(251, 202, 63, 0.9088937093275488) 0%,
+    rgba(233, 107, 199, 0.5921908893709328) 100%
+  );
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 11px 22px rgb(0 0 0 / 30%);
+  color: #006a71;
+  font-family: "Quicksand", sans-serif;
+  max-width: 90%;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  display: block;
+}
+
+.col-12 {
+  text-align: center;
+}
+
+img {
+  max-width: 100px;
+}
