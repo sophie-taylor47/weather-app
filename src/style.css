@@ -35,7 +35,8 @@ ul {
   display: block;
 }
 
-.col-12 {
+.col-12,
+.footer {
   text-align: center;
 }
 
