@@ -28,24 +28,13 @@ let now = new Date();
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = formatDate(now);
 
-//city
-function search(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#search-input");
-  cityElement.innerHTML = cityInput.value;
-}
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
-
-let apiKey = "cda7455f017a25e76c2aa1f8943d682c";
-let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(`${Url}&appid=${apiKey}`).then(displayWeather);
-
 //Weather
 function displayWeather(response) {
-  let temp = document.querySelector("#temperature");
-  temp.innerHTML = Math.round(response.data.main.temp);
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+  let temp = Math.round(response.data.main.temp);
+  let degree = document.querySelector("#temperature");
+  degree.innerHTML = `${temp}`;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
@@ -56,7 +45,7 @@ function displayWeather(response) {
 
 function searchCity(city) {
   let apiKey = "cda7455f017a25e76c2aa1f8943d682c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
