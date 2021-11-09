@@ -11,68 +11,68 @@
 
   <body>
     <div class="container">
-        <div class="heading">
-          <h1>☀️ Weather App ☀️</h1>
-          <form id="search-form">
-            <input
-              type="text"
-              placeholder="Please enter a City..."
-              class="shadow-sm"
-              id="search-input"
-            />
-            <button
-              class="searchButton shadow-sm"
-              id="button-search"
-              type="submit"
-            >
-              Search
-            </button>
+      <div class="heading">
+        <h1>☀️ Weather App ☀️</h1>
+        <form id="search-form">
+          <input
+            type="text"
+            placeholder="Please enter a City..."
+            class="shadow-sm"
+            id="search-input"
+          />
+          <button
+            class="searchButton shadow-sm"
+            id="button-search"
+            type="submit"
+          >
+            Search
+          </button>
 
-            <button class="btn btn-success w-100" id="current-location-button">
-             Current Location
-            </button>
-          </form>
-</div>
-          
-<div class="row">
-  <div class="col-6">
-    <h2 id="city">London</h2>
+          <button class="btn btn-success w-100" id="current-location-button">
+            Current Location
+          </button>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <h2 id="city">London</h2>
           <ul>
-<li> Last updated: <span id="date" ></span></li>
-<li id="weather-description" ></li>
+            <li>Last updated: <span id="date"></span></li>
+            <li id="weather-description"></li>
           </ul>
-  </div>
-    <div class="col-6">
-      <div class="weather-temperature">
-              <img src="images/sunny.png" alt="Sunny" />
-              <h2 id="temperature"></h2>
-          <span class="units" id="units"></span>
-                <a href="#" id="celcius">°C  </a> | 
-                <a href="#" id="fahrenheit">°F</a>
-            </div>
-            </div>
-    <div class="col-6">
+        </div>
+        <div class="col-6">
+          <div class="weather-temperature">
+            <img src="" alt="" id="icon" />
+            <h2 id="temperature"></h2>
+            <span class="units" id="units"></span>
+            <a href="#" id="celcius">°C </a> |
+            <a href="#" id="fahrenheit">°F</a>
+          </div>
+        </div>
+        <div class="col-6">
           <ul id="extra-info">
-            <li> <strong>Humidity: </strong><span id="humidity"></span>% </li> 
-            <li>  <strong>Wind: </strong><span id="wind"></span>km/h </li>
+            <li><strong>Humidity: </strong><span id="humidity"></span>%</li>
+            <li><strong>Wind: </strong><span id="wind"></span>km/h</li>
           </ul>
         </div>
-        </div>
-      
+      </div>
 
-   <small>
-      <h5>
-        <a
-          href="https://github.com/sophie-taylor47/weather-app"
-          target="_blank"
-          class="link"
-        >
-          <strong> Open-source code </strong>
-        </a>
-        by Sophie Taylor
-      </h5>
-    </small>
+      <small>
+        <h5>
+          <a
+            href="https://github.com/sophie-taylor47/weather-app"
+            target="_blank"
+            class="link"
+          >
+            <strong> Open-source code </strong>
+          </a>
+          by Sophie Taylor
+        </h5>
+      </small>
 
-    <script src="src/index.js"></script>
+      <script src="src/index.js"></script>
+    </div>
   </body>
 </html>

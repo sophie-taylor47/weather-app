@@ -47,7 +47,16 @@ function displayWeather(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let description = document.querySelector("#weather-description");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
+
+  let iconElement = document.querySelector("icon");
+  let iconImage = response.data.weather[0].icon;
+  let iconDescription = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconImage}@2x.png`
+  );
+  iconElement.setAttribute("alt", iconDescription);
 }
 
 function searchCity(city) {
