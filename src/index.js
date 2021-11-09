@@ -76,3 +76,22 @@ let currentLocationBtn = document.querySelector("#current-location-button");
 currentLocationBtn.addEventListener("click", getCurrentLocation);
 
 searchCity("London");
+
+//ConvertTemoerature
+function convertTempFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 68;
+}
+
+function convertTempCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 20;
+}
+
+let fahrenheitClick = document.querySelector("#fahrenheit");
+fahrenheitClick.addEventListener("click", convertTempFahrenheit);
+
+let celciusClick = document.querySelector("#celcius");
+celciusClick.addEventListener("click", convertTempCelsius);

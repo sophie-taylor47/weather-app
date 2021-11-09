@@ -1,10 +1,24 @@
 body {
-  background: linear-gradient(
-    180.3deg,
-    rgb(230, 243, 206) 37.2%,
-    rgb(166, 223, 215) 137.3%
-  );
+  margin-top: -40px;
+  width: 100%;
+  height: 100vh;
+  color: #ffff;
+  background: linear-gradient(-100deg, #f1a28a, #e795b4, #83cce7, #a1ecdb);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 15s ease-in-out infinite;
   font-family: "Montserrat", sans-serif;
+}
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 
 form {
@@ -17,22 +31,17 @@ form {
   background: rgb(251, 202, 63);
   background: radial-gradient(
     circle,
-    rgba(251, 202, 63, 0.9088937093275488) 0%,
-    rgba(233, 107, 199, 0.5921908893709328) 100%
+    rgba(241, 208, 101, 0.909) 0%,
+    rgba(240, 218, 233, 0.918) 100%
   );
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0px 11px 22px rgb(0 0 0 / 30%);
   color: #006a71;
   font-family: "Quicksand", sans-serif;
   max-width: 90%;
-  margin: 100px auto;
-  padding: 20px;
-}
-
-ul {
-  list-style-type: none;
-  display: block;
+  margin: 80px auto;
+  padding: 15px;
 }
 
 .col-12,
@@ -42,4 +51,18 @@ ul {
 
 img {
   max-width: 100px;
+}
+
+.units {
+  display: inline;
+}
+
+a {
+  text-align: top;
+  margin: none;
+  text-decoration: none;
+}
+
+h2 {
+  display: inline;
 }
