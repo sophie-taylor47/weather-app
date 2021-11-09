@@ -87,7 +87,8 @@ searchCity("London");
 //ConvertTemperature
 function convertTempCelsius(event) {
   event.preventDefault();
-
+  celciusClick.classList.add("active");
+  fahrenheitClick.classList.remove("active");
   let todayTemp = document.querySelector("#temperature");
   todayTemp.innerHTML = celciusTemperature;
 }

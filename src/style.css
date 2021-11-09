@@ -82,6 +82,7 @@ a {
   text-align: top;
   margin: none;
   text-decoration: none;
+  color: #006a71;
 }
 
 h2 {
@@ -95,4 +96,14 @@ ul {
 
 .extra-info {
   margin-top: 1500;
+}
+
+.weather-temperature .active {
+  color: rgb(38, 120, 241);
+  font-weight: 1000;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
