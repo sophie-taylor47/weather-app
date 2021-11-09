@@ -38,6 +38,8 @@ function displayWeather(response) {
   let degree = document.querySelector("#temperature");
   degree.innerHTML = currentTemp;
 
+  celciusTemperature = Math.round(response.data.main.temp);
+
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
 
@@ -85,20 +87,21 @@ searchCity("London");
 //ConvertTemperature
 function convertTempCelsius(event) {
   event.preventDefault();
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+
   let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = Math.round(celciusTemp);
+  todayTemp.innerHTML = celciusTemperature;
 }
 
 function convertTempFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = fahrenheitTemp;
+  celciusClick.classList.remove("active");
+  fahrenheitClick.classList.add("active");
+  let fahrenheitTemp = (celciusTemperature * 9) / 5 + 32;
+  let todayTemp = document.querySelector("#temperature");
+  todayTemp.innerHTML = Math.round(fahrenheitTemp);
 }
+
+celciusTemperature = null;
 
 let fahrenheitClick = document.querySelector("#fahrenheit");
 fahrenheitClick.addEventListener("click", convertTempFahrenheit);
