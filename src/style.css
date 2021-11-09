@@ -44,9 +44,19 @@ form {
   padding: 15px;
 }
 
-.col-12,
-.footer {
+.heading {
   text-align: center;
+}
+
+.col-6 {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 img {
