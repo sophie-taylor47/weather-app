@@ -40,6 +40,14 @@ function displayWeather(response) {
 
   celciusTemperature = Math.round(response.data.main.temp);
 
+  let temperatureMaxToday = Math.round(response.data.main.temp_max);
+  let temperatureMaxTodayElement = document.querySelector("#max-temp");
+  temperatureMaxTodayElement.innerHTML = `${temperatureMaxToday}°`;
+
+  let temperatureMinToday = Math.round(response.data.main.temp_min);
+  let temperatureMinTodayElement = document.querySelector("#min-temp");
+  temperatureMinTodayElement.innerHTML = `${temperatureMinToday}°`;
+
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
 
@@ -118,3 +126,6 @@ fahrenheitClick.addEventListener("click", convertTempFahrenheit);
 
 let celciusClick = document.querySelector("#celcius");
 celciusClick.addEventListener("click", convertTempCelsius);
+
+//7dayforecast
+//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
