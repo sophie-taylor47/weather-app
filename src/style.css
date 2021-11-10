@@ -107,3 +107,19 @@ ul {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
+.weather-description {
+  text-transform: capitalize;
+}
+
+.col-4 {
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+  padding: 7px 0;
+  float: left;
+  width: 20%;
+}
+
+.col.predicted:hover {
+  background: rgba(247, 247, 244, 0.973);
+}
