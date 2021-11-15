@@ -25,11 +25,11 @@
             id="button-search"
             type="submit"
           >
-             🔎 Search
+            🔎 Search
           </button>
 
           <button class="btn btn-success w-100" id="current-location-button">
-             📍 Current Location
+            📍 Current Location
           </button>
         </form>
       </div>
@@ -43,8 +43,8 @@
           </ul>
         </div>
         <div class="col-6">
-          <div class="weather-temperature">
-            <img src="" alt="" id="icon" />
+          <div class="clearfix weather-temperature">
+             <span id="current-icon"></span>
             <h2 id="temperature"></h2>
             <span class="units" id="units"></span>
             <a href="#" id="celcius">°C </a> |
@@ -53,8 +53,8 @@
         </div>
         <div class="col-6">
           <ul id="extra-info">
-            <li> <strong>Max:</strong> <span id="max-temp"></span>C </li>
-              <li> <strong>Min:</strong> <span id="min-temp"></span>C </li>
+            <li><strong>Max:</strong> <span id="max-temp"></span>C</li>
+            <li><strong>Min:</strong> <span id="min-temp"></span>C</li>
             <li><strong>Humidity: </strong><span id="humidity"></span>%</li>
             <li><strong>Wind: </strong><span id="wind"></span>km/h</li>
           </ul>
@@ -62,63 +62,62 @@
       </div>
 
       <section class="forecast" id="weather-forecast">
-            <div class="forecast-container">
-              <div class="row">
+        <div class="forecast-container">
+          <div class="row">
+            <div class="col-4">
+              <div class="day today"><strong> Tomorrow </strong></div>
 
-                <div class="col-4">
-                  <div class="day today"><strong> Tomorrow </strong></div>
-
-                  <div class="weatherEmoji">⛅️</div>
-                  <div class="highlow">
-                    <span>
-                      <strong> <span id="today-highest"> 12</span>°C </strong>
-                    </span>
-                    <span> <span id="today-lowest"> 8</span>°C</span>
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="day">Thursday</div>
-
-                  <div class="weatherEmoji">🌤</div>
-                  <div class="highlow">
-                    <strong> 19°C </strong>
-                    13°C
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="day">Friday</div>
-
-                  <div class="weatherEmoji">☀️</div>
-                  <div class="highlow">
-                    <strong> 17°C </strong>
-                    11°C
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="day">Saturday</div>
-
-                  <div class="weatherEmoji">🌧</div>
-                  <div class="highlow">
-                    <strong> 13°C </strong>
-                    9°C
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="day">Sunday</div>
-
-                  <div class="weatherEmoji">🌧</div>
-                  <div class="highlow">
-                    <strong> 15°C </strong>
-                    9°C
-                  </div>
-                </div>
+              <div class="weatherEmoji">⛅️</div>
+              <div class="highlow">
+                <span>
+                  <strong> <span id="today-highest"> 12</span>°C </strong>
+                </span>
+                <span> <span id="today-lowest"> 8</span>°C</span>
               </div>
             </div>
-          </section>
+
+            <div class="col-4">
+              <div class="day">Thursday</div>
+
+              <div class="weatherEmoji">🌤</div>
+              <div class="highlow">
+                <strong> 19°C </strong>
+                13°C
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="day">Friday</div>
+
+              <div class="weatherEmoji">☀️</div>
+              <div class="highlow">
+                <strong> 17°C </strong>
+                11°C
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="day">Saturday</div>
+
+              <div class="weatherEmoji">🌧</div>
+              <div class="highlow">
+                <strong> 13°C </strong>
+                9°C
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="day">Sunday</div>
+
+              <div class="weatherEmoji">🌧</div>
+              <div class="highlow">
+                <strong> 15°C </strong>
+                9°C
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <small>
         <h5>
@@ -129,12 +128,13 @@
           >
             Open-source code
           </a>
-          by 
-          <a 
-          href="https://www.linkedin.com/in/sophie-t-300434b2/"
-          class="linked-in">
-          Sophie Taylor
-        </a>
+          by
+          <a
+            href="https://www.linkedin.com/in/sophie-t-300434b2/"
+            class="linked-in"
+          >
+            Sophie Taylor
+          </a>
         </h5>
       </small>
 
