@@ -141,3 +141,18 @@ ul {
 .weatherEmoji {
   font-size: 50px;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color:#006a71;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color:#006a71;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}

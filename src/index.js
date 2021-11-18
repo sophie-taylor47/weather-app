@@ -68,61 +68,6 @@ function displayWeather(response) {
 
   getForecast(response.data.coord);
   changeIcon(response.data.weather[0].icon, description);
-
-  let changeMainIcon = document.querySelector("#current-icon");
-  let icon = response.data.weather[0].icon;
-  if (icon === "04n" || icon === "04d") {
-    changeMainIcon.innerHTML = "☁️";
-  } else {
-    if (icon === "03n" || icon === "03d") {
-      changeMainIcon.innerHTML = "🌥";
-    } else {
-      if (icon === "13n" || icon === "13d") {
-        changeMainIcon.innerHTML = "❄️";
-      } else {
-        if (icon === "50n" || icon === "50d") {
-          changeMainIcon.innerHTML = "🌫";
-        } else {
-          if (icon === "02n" || icon === "02d") {
-            changeMainIcon.innerHTML = "⛅️";
-          } else {
-            if (icon === "01d") {
-              changeMainIcon.innerHTML = "☀️";
-            } else {
-              if (icon === "01n") {
-                changeMainIcon.innerHTML = "🌙 ";
-              } else {
-                if (icon === "09n" || icon === "09d") {
-                  changeMainIcon.innerHTML = "🌧";
-                } else {
-                  if (icon === "10n" || icon === "10d") {
-                    changeMainIcon.innerHTML = "🌦";
-                  } else {
-                    if (icon === "11n" || icon === "11d") {
-                      changeMainIcon.innerHTML = "🌩";
-                    } else {
-                      if (description === "tornado") {
-                        changeMainIcon.innerHTML = "🌪";
-                      } else {
-                        if (
-                          description === "thunderstorm with light rain" ||
-                          description === "thunderstorm with rain" ||
-                          description === "thunderstorm with heavy rain" ||
-                          description === "thunderstorm with heavy drizzle"
-                        ) {
-                          changeMainIcon.innerHTML = "⛈";
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 function searchCity(city) {
@@ -185,138 +130,48 @@ fahrenheitClick.addEventListener("click", convertTempFahrenheit);
 let celciusClick = document.querySelector("#celcius");
 celciusClick.addEventListener("click", convertTempCelsius);
 
-//5dayForecast
-function displayForecast(response) {
-  let weatherForecast = response.data.daily;
-  let forecast = document.querySelector("#weather-forecast");
-  let forecastHTML = `<div class="row">`;
+//displayForecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
-  weatherForecast.forEach(function (forecastDay, index) {
-    if (index === 0) {
-      forecastHTML =
-        forecastHTML +
-        ` 
-              <div class="col-4">
-                <div class="day today" id="today" > <strong> Today </strong>
-               </div>
-                <div class="weatherEmoji"> 
-                ${changeIcon(
-                  forecastDay.weather[0].icon,
-                  forecastDay.weather[0].description
-                )} </div>
-                <div class="highlow">
-                  <span>
-                    <strong> <span id="today-highest"> ${Math.round(
-                      forecastDay.temp.max
-                    )}</span>° </strong>
-                  </span>
-                  <span> <span id="today-lowest"> ${Math.round(
-                    forecastDay.temp.min
-                  )}</span>°</span>
-                </div>
-              </div>
-            `;
-    } else {
-      if (index === 1) {
-        forecastHTML =
-          forecastHTML +
-          ` 
-              <div class="col-4">
-                <div class="day today" id="today" > Tommorow
-               </div>
-                <div class="weatherEmoji"> 
-                ${changeIcon(
-                  forecastDay.weather[0].icon,
-                  forecastDay.weather[0].description
-                )} </div>
-                <div class="highlow">
-                  <span>
-                    <strong> <span id="today-highest"> ${Math.round(
-                      forecastDay.temp.max
-                    )}</span>° </strong>
-                  </span>
-                  <span> <span id="today-lowest"> ${Math.round(
-                    forecastDay.temp.min
-                  )}</span>°</span>
-                </div>
-              </div>
-            `;
-      } else {
-        if (index > 0 && index < 5) {
-          forecastHTML =
-            forecastHTML +
-            ` 
-              <div class="col-4">
-                <div class="day today" id="today" > ${formatDay(
-                  forecastDay.dt
-                )} </div>
-                <div class="weatherEmoji"> 
-                ${changeIcon(
-                  forecastDay.weather[0].icon,
-                  forecastDay.weather[0].description
-                )} </div>
-                <div class="highlow">
-                  <span>
-                    <strong> <span id="today-highest"> ${Math.round(
-                      forecastDay.temp.max
-                    )}</span>° </strong>
-                  </span>
-                  <span> <span id="today-lowest"> ${Math.round(
-                    forecastDay.temp.min
-                  )}</span>°</span>
-                </div>
-              </div>
-            `;
-        }
-      }
-    }
-  });
+  let forecastHTML = `<div class="weather-forecast-row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+    forecastHTML +
+    `
+          <div class="col-2">
+          <div class=weather-forecast-date"> ${day}</div>
+          <img
+            src="https://openweathermap.org/img/wn/50d@2x.png"
+            alt=""
+            width="42"
+          />
 
-  forecast.innerHTML = forecastHTML + `</div>`;
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max"> 18° </span>
+            <span class="weather-forecast-temperature-min"> 12° </span>
+          </div>
+        </div> `;
 
-  forecast.innerHTML = forecastHTML;
-}
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  }
 
 function getForecast(coordinates) {
+  console.log(coordinates);
   let apiKey = "cda7455f017a25e76c2aa1f8943d682c0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  let tempUnits = "metric";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/onecall";
+  let apiUrl = `${apiEndpoint}?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${tempUnits}`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
-//displayWeatherIcon
-function changeIcon(icon, description) {
-  let emoji = "";
+iconElement.setAttribute(
+  "src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
+iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  if (icon === "04n" || icon === "04d") {
-    emoji = "☁️";
-  } else if (icon === "03n" || icon === "03d") {
-    emoji = "🌥";
-  } else if (icon === "13n" || icon === "13d") {
-    emoji = "❄️";
-  } else if (icon === "50n" || icon === "50d") {
-    emoji = "🌫";
-  } else if (icon === "02n" || icon === "02d") {
-    emoji = "⛅️";
-  } else if (icon === "01d") {
-    emoji = "☀️";
-  } else if (icon === "01n") {
-    emoji = "🌙 ";
-  } else if (icon === "09n" || icon === "09d") {
-    emoji = "🌧";
-  } else if (icon === "10n" || icon === "10d") {
-    emoji = "🌦";
-  } else if (icon === "11n" || icon === "11d") {
-    emoji = "🌩";
-  } else if (description === "tornado") {
-    emoji = "🌪";
-  } else if (
-    description === "thunderstorm with light rain" ||
-    description === "thunderstorm with rain" ||
-    description === "thunderstorm with heavy rain" ||
-    description === "thunderstorm with heavy drizzle"
-  ) {
-    emoji = "⛈";
-  }
-
-  return emoji;
-}
+getForecast(response.data.coord);
